@@ -130,7 +130,7 @@ class HBNBCommand(cmd.Cmd):
         for i in varr[1:]:
             key, value = i.split("=")
 
-            if value[0] == '"'
+            if value[0] == '"':
                 value = value.strip('"')
 
             if "_" in value:
