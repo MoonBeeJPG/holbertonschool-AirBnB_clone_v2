@@ -139,7 +139,7 @@ class HBNBCommand(cmd.Cmd):
                 value = HBNBCommand.types[key](value)
             setattr(new_instance, key, value)
         except Exception:
-            pass
+           pass
 
         print(new_instance.id)
         storage.save()
