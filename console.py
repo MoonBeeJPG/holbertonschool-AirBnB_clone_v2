@@ -123,7 +123,7 @@ class HBNBCommand(cmd.Cmd):
             return
         arg = args.split()[0]
         new_instance = HBNBCommand.classes[arg]()
-        for args in arg.split()[1:]:
+        for arg in args.split()[1:]:
             key = arg.split('=')[0]
             value = arg.split('=')[1]
             if value != value.strip('"'):
