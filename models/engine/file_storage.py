@@ -14,10 +14,10 @@ class FileStorage:
         if cls is None:
             return FileStorage.__objects
         else:
-            for i in FileStorage.__objects:
-                key = i.split('.')
-                if cls.__name__ == key:
-                    my_dict[i] = FileStorage.__objects[i]
+            for i, j in FileStorage.__objects.items():
+                key = i.split('.')[0]
+                if key == cls.__name__:
+                    my_dict[i] = j
             return my_dict
 
     def new(self, obj):
