@@ -1,6 +1,6 @@
 from models.base_model import Base
 from os import getenv
-from mysqlalchemy import create_engine
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.state import State
 from models.city import City
