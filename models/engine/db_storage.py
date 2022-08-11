@@ -1,4 +1,4 @@
-from models.models_base import Base
+from models.base_model import Base
 from os import getenv
 from mysqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
