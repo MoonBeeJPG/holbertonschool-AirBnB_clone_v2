@@ -1,5 +1,4 @@
 from models.models_base import Base
-from sqlalchemy.orm import 
 from os import getenv
 from mysqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
