@@ -35,7 +35,7 @@ class BaseModel:
                     j = datetime.strptime(j, '%Y-%m-%dT%H:%M:%S.%f')
         if 'id' not in kwargs:
             self.id = str(uuid.uuid4())
-        elif 'created_at' not it kwargs:
+        elif 'created_at' not in kwargs:
             self.created_at = datetime.now()
         elif 'updated_at' not in kwargs:
             self.created_at = datetime.now()
