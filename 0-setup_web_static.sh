@@ -2,7 +2,7 @@
 # Bash script that sets up your web servers for the deployement of web_static
 sudo apt update
 sudo apt -y install nginx
-mkdir -p /data/web_static/releases/test
+mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
 echo "<html>
   <head>
