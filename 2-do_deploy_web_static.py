@@ -18,8 +18,8 @@ def do_deploy(archive_path):
         filename = archive_path.split("/")[1]
         filename_no_extension = filename.split(".")[0]
         file_path = "/data/web_static/releases/" + filename_no_extension + "/"
-        run("mkdir -p" + file_path)
-        run("tar -xf2 /tmp/" + filename + " -C" + file_path)
+        run("mkdir -p " + file_path)
+        run("tar -xzf /tmp/" + filename + " -C " + file_path)
         run("mv " + file_path + "web_static/*" + " " + file_path)
         run("rm /tmp/{}".format(filename))
         run("rm -rf " + file_path + "web_static")
@@ -27,5 +27,6 @@ def do_deploy(archive_path):
         run("ln -s " + file_path + " /data/web_static/current")
         print("New version deployed!")
         return True
+
     except Exception:
         return False
