@@ -8,6 +8,7 @@ from os.path import exists
 env.user = "ubuntu"
 env.hosts = ['3.88.99.250', '184.73.123.157']
 
+
 def do_pack():
     """comment"""
     try:
@@ -18,6 +19,7 @@ def do_pack():
         return("versions/web_static_{}.tgz".format(date))
     except exception:
         return None
+
 
 def do_deploy(archive_path):
     """commmmment"""
@@ -41,8 +43,9 @@ def do_deploy(archive_path):
     except Exception:
         return False
 
+
 def deploy():
-       """a"""
+    """a"""
     path = do_pack()
     if exists(path):
         return do_deploy(path)
