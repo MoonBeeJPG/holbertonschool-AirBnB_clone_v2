@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
-# script that sets up your web servers for the deployement of web_static
-CREATE /data/ IF NOT EXISTS
-CREATE /data/web_static/ IF NOT EXISTS
-CREATE /data/web_static/releases/ IF NOT EXISTS
-CREATE /data/web_static/releases/test/ IF NOT EXISTS
-CREATE /data/web_static/releases/test/index.html IF NOT EXISTS
-LN -s /data/web_static/releases/test/ /test/
-#GRANTS owner /data/ USER ubuntu
-sudo chown 755 ubuntu /data/web_static_releases/test/
-UPDATE nginx 
+# Bash script that sets up your web servers for the deployement of web_static
+sudo apt update
+sudo apt -y install nginx
+mkdir /data/web_static/releases/test
+mkdir /data/web_static/shared
+touch /data/web_static/releases/test/index.html
+echo "
+<html>
+  <head>
+  </head>
+  <body>
+    Holberton School
+  </body>
+</html>" > /data/web_static/releases/test/index.html
+ln -sf /data/web_static/releases/test/ /data/web_static/current
+sudo chown -R ubuntu:ubuntu /data
+sed -i "/listen 80 default_server;/a location /hbnb/static/ {alias /data/web_static/current/;}" /etc/nginx/sites-available/default
+service nginx restart
