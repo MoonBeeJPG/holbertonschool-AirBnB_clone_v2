@@ -20,6 +20,6 @@ if __name__ == "__main__":
     @app.route('/c/<text>', strict_slashes=False)
     def route2(text):
         """ /c/<text> folder route """
-        return "C" + text.replace('_', ' ')
+        return "C " + text.replace('_', ' ')
 
     app.run(host='0.0.0.0')
