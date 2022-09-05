@@ -12,4 +12,14 @@ if __name__ == "__main__":
         """ Root folder route """
         return "Hello HBNB!"
 
+    @app.route('/hbnb', strict_slashes=False)
+    def route1():
+        """ /hbnb folder route """
+        return "HBNB"
+
+    @app.route('/c/<text>', strict_slashes=False)
+    def route2(text):
+        """ /c/<text> folder route """
+        return "C" + text.replace('_', ' ')
+
     app.run(host='0.0.0.0')

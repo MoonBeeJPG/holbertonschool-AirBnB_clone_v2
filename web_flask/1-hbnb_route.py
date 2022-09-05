@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     @app.route('/', strict_slashes=False)
     def route():
-        """ Root foulder route """
+        """ Root folder route """
         return "Hello HBNB!"
 
     @app.route('/hbnb', strict_slashes=False)
@@ -17,4 +17,4 @@ if __name__ == "__main__":
         """ /hbnb folder route """
         return "HBNB"
 
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0')
