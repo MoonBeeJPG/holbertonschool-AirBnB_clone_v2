@@ -28,10 +28,9 @@ if __name__ == "__main__":
         """ /python/(<text>) folder route """
         return "Python " + text.replace('_', ' ')
 
-    @app.route('/number/<n>', strict_slashes=False)
+    @app.route('/number/<int:n>', strict_slashes=False)
     def route4(n):
         """ /number/n folder route """
-        if isinstance(n, int):
-            return str(n) + " is a number"
+        return str(n) + " is a number"
 
     app.run(host='0.0.0.0')
