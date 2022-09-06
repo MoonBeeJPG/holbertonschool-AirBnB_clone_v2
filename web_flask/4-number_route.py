@@ -32,6 +32,6 @@ if __name__ == "__main__":
     def route4(n):
         """ /number/n folder route """
         if isinstance(n, int):
-            return "n is a number"
+            return str(n) + "is a number"
 
     app.run(host='0.0.0.0')
