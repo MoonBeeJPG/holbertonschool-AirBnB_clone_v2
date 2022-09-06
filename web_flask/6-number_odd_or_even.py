@@ -39,13 +39,13 @@ if __name__ == "__main__":
         """ display a HTML page only if n is an integer """
         return render_template('5-number.html', n=n)
 
-    @app.route('/number_odd_or_even/<n>', strict_slashes=False)
-    def odd_or_even(n):
-        """ display a HTML page only if n is an integer """
+     @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+    def or_or(n):
+        """n is even or odd"""
         if n % 2 == 0:
             even_odd = "even"
         else:
             even_odd = "odd"
-        return render_template('6-number_odd_or_even.html', n=n, even_odd=even_odd)
+        return render_template('6-number_odd_or_even.html', n=n, even_odd=even_odd)    
 
     app.run(host='0.0.0.0')
