@@ -43,9 +43,9 @@ if __name__ == "__main__":
     def or_or(n):
         """n is even or odd"""
         if n % 2 == 0:
-            even_odd = "even"
+            evenn = "even"
         else:
-            even_odd = "odd"
-        return render_template('6-number_odd_or_even.html', n=n, even_odd=even_odd)    
+            evenn = "odd"
+        return render_template('6-number_odd_or_even.html', n=n, evenn=evenn)
 
     app.run(host='0.0.0.0')
