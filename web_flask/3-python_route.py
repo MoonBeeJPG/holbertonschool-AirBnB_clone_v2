@@ -23,7 +23,7 @@ if __name__ == "__main__":
         return "C " + text.replace('_', ' ')
 
     @app.route('/python/', defaults={'text': "is cool"}, strict_slashes=False)
-    @app.route('/python/(<text>)', strict_slashes=False)
+    @app.route('/python/<text>', strict_slashes=False)
     def route3(text):
         """ /python/(<text>) folder route """
         return "Python " + text.replace('_', ' ')
