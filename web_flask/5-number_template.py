@@ -36,6 +36,6 @@ if __name__ == "__main__":
     @app.route('/number_template/<int:n>', strict_slashes=False)
     def route5(n):
         """ display a HTML page only if n is an integer """
-        return render_templates('5-number_template', n=n)
+        return render_templates('5-number.htmt', n=n)
 
     app.run(host='0.0.0.0')
